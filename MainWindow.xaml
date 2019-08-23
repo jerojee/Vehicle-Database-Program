@@ -1,0 +1,40 @@
+﻿<Window x:Class="VehicleService.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VehicleService"
+        mc:Ignorable="d"
+        Background="#1f2733" Title="MainWindow" Height="550" Width="700">
+    <Grid>
+        <ListBox x:Name="VehicleListBox"  Foreground="White" HorizontalAlignment="Left" Height="275" Margin="10,21,0,0" VerticalAlignment="Top" Width="672" Background="#282e38">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Viewbox>
+                        <StackPanel>
+                            <Label Content="-------------------------------" Foreground="White"/>
+                            <TextBlock Text="{Binding Id, StringFormat=   'ID:    {0}'}" Foreground="White"/>
+                            <TextBlock Text="{Binding Year, StringFormat= 'YEAR:  {0}'}" Foreground="White"/>
+                            <TextBlock Text="{Binding Make, StringFormat= 'MAKE:  {0}'}" Foreground="White"/>
+                            <TextBlock Text="{Binding Model, StringFormat='MODEL: {0}'}" Foreground="White"/>
+                        </StackPanel>
+                    </Viewbox>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button x:Name="GetAllVehiclesButton" Content="Get All Vehicles" HorizontalAlignment="Left" Margin="10,336,0,0" VerticalAlignment="Top" Width="89" 
+                Click="Handle_GetAllVehiclesButton_Click"/>
+        <Button x:Name="GetAllVehiclesByIdButton" Content="Get By Id" HorizontalAlignment="Left" Margin="10,396,0,0" VerticalAlignment="Top" Width="89"
+                Click="Handle_GetAllVehiclesByIdButton_Click"/>
+        <Button x:Name="CreateVehiclesButton" Content="Create Vehicle" HorizontalAlignment="Left" Margin="144,336,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="2,0.6"
+                Click="Handle_CreateVehiclesButton_Click"/>
+        <Button x:Name="UpdateVehiclesButton" Content="Update Vehicle" HorizontalAlignment="Left" Margin="144,396,0,0" VerticalAlignment="Top" Width="88"
+                Click="Handle_UpdateVehiclesButton_Click"/>
+        <Button x:Name="DeleteVehicleButton" Content="Delete Vehicle by Id" HorizontalAlignment="Left" Margin="10,458,0,0" VerticalAlignment="Top" Width="222"
+                Click="Handle_DeleteVehicleButton_Click"/>
+        <Button x:Name="FilterVehiclesButton" Content="Filter Vehicles By..." HorizontalAlignment="Left" Margin="545,336,0,0" VerticalAlignment="Top" Width="137" 
+            Click="Handle_FilterVehiclesButton_Click" RenderTransformOrigin="0.685,0.5"/>
+
+    </Grid>
+</Window>
